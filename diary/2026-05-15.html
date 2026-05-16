@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026年5月15日 · 无好有墨玩</title>
+<style>
+  :root {
+    --bg: #faf8f5; --text: #2c2c2c; --muted: #8c8c8c;
+    --light: #b8b4ae; --accent: #4a4a4a; --border: #e8e4de;
+    --tag-bg: #f2efe9; --tag-text: #6b6b6b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Noto Serif SC", "Source Han Serif CN", "STSong", "SimSun", "Songti SC", serif;
+    background: url('../assets/paper-background-3.png');
+    background-size: cover;
+    background-attachment: fixed;
+    color: var(--text); line-height: 1.8;
+    min-height: 100vh; padding: 2rem 1.5rem;
+    position: relative;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255,255,255,0.15);
+    z-index: -1;
+  }
+  body::after {
+    content: '';
+    position: fixed;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-50%);
+    width: 200px;
+    height: 300px;
+    background: url('../assets/painting-1.png');
+    background-size: cover;
+    opacity: 0.3;
+    border-radius: 4px;
+    z-index: -1;
+  }
+  .container { max-width: 620px; margin: 0 auto; }
+
+  .topbar {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 2rem; padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(140,140,140,0.3);
+  }
+  .topbar h1 { font-size: 1.1rem; font-weight: 400; letter-spacing: 0.08em; }
+  .topbar a { font-size: 0.85rem; color: var(--muted); text-decoration: none; }
+  .topbar a:hover { color: var(--text); }
+
+  /* 卡片容器 */
+  .card {
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(140,140,140,0.3);
+    border-radius: 2px;
+    padding: 2.5rem 2.2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  .card-date { font-size: 0.78rem; color: var(--light); letter-spacing: 0.06em; margin-bottom: 0.3rem; }
+  .card-title { font-size: 1.25rem; font-weight: 400; letter-spacing: 0.06em; margin-bottom: 1.5rem; padding-bottom: 0.8rem; border-bottom: 1px dashed rgba(140,140,140,0.3); }
+
+  .section { margin-bottom: 1.5rem; }
+  .section h4 {
+    font-size: 0.78rem; font-weight: 400; letter-spacing: 0.08em;
+    color: var(--muted); margin-bottom: 0.6rem;
+    display: flex; align-items: center; gap: 0.4rem;
+  }
+  .section h4::after { content: ''; flex: 1; height: 1px; background: rgba(140,140,140,0.3); }
+
+  .tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .tag { background: rgba(242,239,233,0.7); color: var(--tag-text); font-size: 0.8rem; padding: 0.2rem 0.8rem; border-radius: 2px; letter-spacing: 0.04em; }
+
+  .suggest-list { list-style: none; padding: 0; }
+  .suggest-list li { font-size: 0.9rem; padding: 0.35rem 0 0.35rem 1.2rem; position: relative; }
+  .suggest-list li::before { content: '→'; position: absolute; left: 0; color: var(--light); }
+
+  .achievements { display: flex; flex-wrap: wrap; gap: 0.3rem 1.2rem; font-size: 0.88rem; }
+  .achievements span::before { content: '✓ '; color: #7eb77f; }
+
+  footer { margin-top: 2rem; font-size: 0.75rem; color: #bbb; text-align: center; }
+  footer a { color: #bbb; text-decoration: none; }
+  footer a:hover { color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="topbar">
+  <h1>日记</h1>
+  <a href="./index.html">← 返回列表</a>
+</div>
+
+<div class="card">
+  <div class="card-date">2026年5月15日 · 星期五</div>
+  <div class="card-title">Agent 多通道部署日</div>
+
+  <div class="section">
+    <h4>🧠 今日技法</h4>
+    <div class="tag-list">
+      <span class="tag">Agent Skill Orchestration</span>
+      <span class="tag">Multi-Channel Deployment</span>
+      <span class="tag">OAuth Device Flow</span>
+      <span class="tag">Capability Packaging</span>
+      <span class="tag">Rapid Validation</span>
+      <span class="tag">DevOps for Agent</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h4>💡 技法释义</h4>
+    <ul class="suggest-list">
+      <li><b>Skill Orchestration</b> — 给同一个 Agent 安装多个可复用技能模块（QQ频道、视觉识图、微信问答），如同给操作系统装驱动</li>
+      <li><b>Multi-Channel Deployment</b> — 微信走 Flask+ngrok，QQ 走官方 CLI+OAuth，同一 AI 后端服务多平台</li>
+      <li><b>OAuth Device Flow</b> — 扫码登录 CLI 是标准设备授权流程，IoT 设备和 CLI 工具通用</li>
+      <li><b>Capability Packaging</b> — 自建 vision skill，把 Python 脚本+模型 API 封装为标准 SKILL.md</li>
+      <li><b>Rapid Validation</b> — 每完成一步立刻测试，不攒到最后，DevOps 思维</li>
+      <li><b>DevOps for Agent</b> — 健康检查 cron、日志 wrapper、管理面板 status.sh</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h4>⚡ 下次如何更快</h4>
+    <ul class="suggest-list">
+      <li>一开始列出能力清单，批量安装，而非逐个触发</li>
+      <li>部署服务时同步加监控，避免事后补救</li>
+      <li>多用快捷命令（如 search-and-join）减少步数</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h4>🔧 今日可优化</h4>
+    <ul class="suggest-list">
+      <li>QQ 频道与微信后端未统一 AI 问答能力</li>
+      <li>API key 散落在 3 个文件，建议统一管理</li>
+      <li>wechat_bot 缺乏持久化对话上下文</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h4>📈 成果</h4>
+    <div class="achievements">
+      <span>微信bot升级为AI问答助手</span>
+      <span>QQ频道接入+测试通过</span>
+      <span>视觉识图Skill上线</span>
+      <span>健康监控+日志+面板</span>
+      <span>每日复盘自动化</span>
+    </div>
+  </div>
+</div>
+
+<footer>
+  无好有墨玩 · <a href="../index.html">主页</a>
+</footer>
+
+</div>
+</body>
+</html>

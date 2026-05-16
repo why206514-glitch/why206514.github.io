@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>无好有墨玩 · 日记</title>
+<style>
+  :root {
+    --bg: #faf8f5;
+    --text: #2c2c2c;
+    --muted: #8c8c8c;
+    --accent: #4a4a4a;
+    --border: #e8e4de;
+    --tag-bg: #f2efe9;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Noto Serif SC", "Source Han Serif CN", "STSong", "SimSun", "Songti SC", serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    min-height: 100vh;
+    padding: 2rem 1.5rem;
+  }
+  .container { max-width: 620px; margin: 0 auto; }
+
+  /* 顶栏 */
+  .topbar {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 2rem; padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .topbar h1 { font-size: 1.2rem; font-weight: 400; letter-spacing: 0.1em; }
+  .topbar a { font-size: 0.85rem; color: var(--muted); text-decoration: none; }
+  .topbar a:hover { color: var(--text); }
+
+  /* 搜索框 */
+  .search-box {
+    width: 100%; padding: 0.7rem 1rem; margin-bottom: 2rem;
+    border: 1px solid var(--border); border-radius: 2px;
+    font-family: inherit; font-size: 0.9rem; background: #fff;
+    color: var(--text); outline: none; transition: border-color 0.2s;
+  }
+  .search-box:focus { border-color: var(--accent); }
+  .search-box::placeholder { color: var(--muted); }
+
+  /* 卡片 */
+  .card {
+    background: #fff; border: 1px solid var(--border); border-radius: 2px;
+    padding: 1.8rem 2rem; margin-bottom: 1.2rem;
+    transition: border-color 0.2s; cursor: pointer; display: block;
+    text-decoration: none; color: inherit;
+  }
+  .card:hover { border-color: var(--accent); }
+  .card-date { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.06em; margin-bottom: 0.3rem; }
+  .card-title { font-size: 1.05rem; font-weight: 400; letter-spacing: 0.04em; margin-bottom: 0.8rem; }
+  .card-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .card-tag {
+    background: var(--tag-bg); font-size: 0.72rem; padding: 0.15rem 0.55rem;
+    border-radius: 2px; color: var(--muted); letter-spacing: 0.03em;
+  }
+  .card-empty {
+    text-align: center; color: var(--muted); font-size: 0.9rem;
+    padding: 3rem 0; display: none;
+  }
+
+  footer {
+    margin-top: 3rem; font-size: 0.75rem; color: #bbb; text-align: center;
+  }
+  footer a { color: #bbb; text-decoration: none; }
+  footer a:hover { color: var(--muted); }
+
+  /* 目录列表 */
+  .directory-list {
+    background: #fff; border: 1px solid var(--border); border-radius: 2px;
+    padding: 1.8rem 2rem;
+  }
+  .directory-item {
+    display: block;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    color: var(--text);
+  }
+  .directory-item:last-child {
+    border-bottom: none;
+  }
+  .directory-item:hover {
+    color: var(--accent);
+  }
+  .directory-name {
+    font-size: 1.05rem;
+    letter-spacing: 0.04em;
+  }
+  .directory-meta {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 0.3rem;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="topbar">
+  <h1>日记目录</h1>
+  <a href="index.html">← 日记首页</a>
+</div>
+
+<div class="directory-list">
+  <a href="index.html" class="directory-item">
+    <div class="directory-name">日记首页</div>
+    <div class="directory-meta">日记列表与搜索功能</div>
+  </a>
+  <a href="2026-05-15.html" class="directory-item">
+    <div class="directory-name">2026年5月15日 · Agent 多通道部署日</div>
+    <div class="directory-meta">Skill Orchestration, Multi-Channel, OAuth Device Flow, Capability Packaging, DevOps for Agent</div>
+  </a>
+</div>
+
+<footer>
+  无好有墨玩 · <a href="../index.html">主页</a>
+</footer>
+
+</div>
+
+</body>
+</html>

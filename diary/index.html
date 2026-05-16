@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>无好有墨玩 · 日记</title>
+<style>
+  :root {
+    --bg: #faf8f5;
+    --text: #2c2c2c;
+    --muted: #8c8c8c;
+    --accent: #4a4a4a;
+    --border: #e8e4de;
+    --tag-bg: #f2efe9;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Noto Serif SC", "Source Han Serif CN", "STSong", "SimSun", "Songti SC", serif;
+    background: url('../assets/paper-background-2.png');
+    background-size: cover;
+    background-attachment: fixed;
+    color: var(--text);
+    line-height: 1.8;
+    min-height: 100vh;
+    padding: 2rem 1.5rem;
+    position: relative;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255,255,255,0.2);
+    z-index: -1;
+  }
+  .container { max-width: 620px; margin: 0 auto; }
+
+  .topbar {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 2rem; padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(140,140,140,0.3);
+  }
+  .topbar h1 { font-size: 1.2rem; font-weight: 400; letter-spacing: 0.1em; }
+  .topbar a { font-size: 0.85rem; color: var(--muted); text-decoration: none; }
+  .topbar a:hover { color: var(--text); }
+
+  .search-box {
+    width: 100%; padding: 0.7rem 1rem; margin-bottom: 2rem;
+    border: 1px solid rgba(140,140,140,0.3); border-radius: 2px;
+    font-family: inherit; font-size: 0.9rem;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(5px);
+    color: var(--text); outline: none; transition: all 0.2s;
+  }
+  .search-box:focus { border-color: rgba(74,74,74,0.5); background: rgba(255,255,255,0.8); }
+  .search-box::placeholder { color: var(--muted); }
+
+  /* 卡片 */
+  .card {
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(140,140,140,0.3);
+    border-radius: 2px;
+    padding: 1.8rem 2rem;
+    margin-bottom: 1.2rem;
+    transition: all 0.2s;
+    cursor: pointer; display: block;
+    text-decoration: none; color: inherit;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .card:hover {
+    border-color: rgba(74,74,74,0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  }
+  .card-date { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.06em; margin-bottom: 0.3rem; }
+  .card-title { font-size: 1.05rem; font-weight: 400; letter-spacing: 0.04em; margin-bottom: 0.8rem; }
+  .card-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .card-tag {
+    background: rgba(242,239,233,0.7);
+    font-size: 0.72rem; padding: 0.15rem 0.55rem;
+    border-radius: 2px; color: rgba(140,140,140,0.8); letter-spacing: 0.03em;
+  }
+  .card-empty {
+    text-align: center; color: var(--muted); font-size: 0.9rem;
+    padding: 3rem 0; display: none;
+  }
+
+  footer {
+    margin-top: 3rem; font-size: 0.75rem; color: #bbb; text-align: center;
+  }
+  footer a { color: #bbb; text-decoration: none; }
+  footer a:hover { color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="topbar">
+  <h1>日记</h1>
+  <a href="../index.html">← 返回主页</a>
+</div>
+
+<input class="search-box" id="search" type="text" placeholder="检索日记 · 按标题或技巧关键词搜索" oninput="filterCards()">
+
+<div id="card-list">
+
+  <!-- ===== 日记卡片列表 ===== -->
+
+  <a class="card" href="2026-05-15.html">
+    <div class="card-date">2026年5月15日 · 星期五</div>
+    <div class="card-title">Agent 多通道部署日</div>
+    <div class="card-tags">
+      <span class="card-tag">Skill Orchestration</span>
+      <span class="card-tag">Multi-Channel</span>
+      <span class="card-tag">OAuth Device Flow</span>
+      <span class="card-tag">Capability Packaging</span>
+      <span class="card-tag">DevOps for Agent</span>
+    </div>
+  </a>
+
+  <!-- ===== 新日记插入位置 ===== -->
+
+</div>
+
+<div class="card-empty" id="no-result">
+  没有匹配的日记
+</div>
+
+<footer>
+  无好有墨玩 · <a href="../index.html">主页</a>
+</footer>
+
+</div>
+
+<script>
+function filterCards() {
+  var q = document.getElementById('search').value.toLowerCase();
+  var cards = document.querySelectorAll('#card-list .card');
+  var empty = document.getElementById('no-result');
+  var visible = 0;
+  cards.forEach(function(c) {
+    var text = (c.getAttribute('data-search') || c.textContent).toLowerCase();
+    if (!q || text.indexOf(q) >= 0) { c.style.display = ''; visible++; }
+    else { c.style.display = 'none'; }
+  });
+  empty.style.display = visible ? 'none' : '';
+}
+</script>
+
+</body>
+</html>
